@@ -45,13 +45,6 @@
   text-decoration: none;
 }
 
-.first {
-  /* width: 48vw;
-    height: 45vw;
-    background-color: #f6e6e6;
-    padding-top: 8vw; */
-}
-
 .first h4 {
   font-size: 2vw;
 }
@@ -132,15 +125,7 @@
 .first-colomn-img {
   width: 45vw;
   height: 37vw;
-  /* width: 650px;
-    height: 600px; */
 }
-
-/* @media (max-width: 720px) {
-    .second-colomn{
-        padding-top: 0px;
-    }
-} */
 
 .fifth-part .second-colomn {
   width: 48vw;
@@ -237,3 +222,4 @@
 
   border: 1px solid;
 }
+

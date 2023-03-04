@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import Navbar from "../components/navbar";
 import "./HomePage.css";
@@ -11,6 +12,7 @@ import CountryDataCard from "../components/countrydatacard";
 import { CountryData } from "../data/countrydata";
 import BlogDataCard from "../components/blogdatacard";
 import { BlogData } from "../data/blogsdata";
+import Footer from "../components/footer";
 
 const HomePage = () => {
   return (
@@ -75,7 +77,7 @@ const HomePage = () => {
                 <li className="accurate">
                   <div className="d-flex flex-row">
                     <div>
-                      <img src="./images/homepageimages/guidance.png" />
+                      <img src="./images/homepageimages/guidance.png" alt=""/>
                     </div>
                     <div className="px-5">
                       <h5>Accurate Guidance</h5>
@@ -89,7 +91,7 @@ const HomePage = () => {
                 <li className="anywhere">
                   <div className="d-flex flex-row">
                     <div>
-                      <img src="./images/homepageimages/internet.png" />
+                      <img src="./images/homepageimages/internet.png" alt=""/>
                     </div>
                     <div className="px-5">
                       <h5>Anywhere in the world!</h5>
@@ -106,7 +108,7 @@ const HomePage = () => {
 
           <div className="col-lg-6 col-md-12">
             <div className="img1">
-              <img src="./images/homepageimages/img1.png" />
+              <img src="./images/homepageimages/img1.png" alt=""/>
             </div>
           </div>
         </div>
@@ -181,11 +183,12 @@ const HomePage = () => {
               <img
                 src="./images/homepageimages/fifth-part-images/fifth.jpg"
                 className="first-colomn-img"
+                alt=""
               />
             </div>
           </div>
 
-          <div className="col-lg-6 col-md-12"> 
+          <div className="col-lg-6 col-md-12">
             <div className="second-colomn-main">
               <div className="second-colomn">
                 <div>
@@ -208,7 +211,9 @@ const HomePage = () => {
 
                   <img
                     src="./images/homepageimages/fifth-part-images/profile.png"
-                    className="mx-auto d-block profile" />
+                    className="mx-auto d-block profile"
+                    alt=""
+                  />
 
                   <h4 class="text-center fw-normal">
                     <b>Anne Marie</b>
@@ -223,35 +228,34 @@ const HomePage = () => {
 
       <div className="sixth-part p-5">
         <div className="row">
-
           <div className="col">
-              <div className="text-uppercase our-latest-blogs">
-                our latest blogs
-              </div>
-              <div className="our-work-business">
-                Our Work Business <b>Innovations!</b>
-              </div>
+            <div className="text-uppercase our-latest-blogs">
+              our latest blogs
+            </div>
+            <div className="our-work-business">
+              Our Work Business <b>Innovations!</b>
+            </div>
           </div>
 
           <div className="col d-flex justify-content-end">
-          <button className="news-button">
-          View More News
-        </button>
+            <button className="news-button">View More News</button>
           </div>
-
         </div>
 
         <div className="sixth-part-cards">
-
-        <div className="row xs={1} md={2} lg={3} pt-4 pb-5 mx-auto">
-          {BlogData.map((item) => (
-            <div className="col d-flex justify-content-center" key={item.id}>
-              <BlogDataCard item={item} />
-            </div>
-          ))}
+          <div className="row xs={1} md={2} lg={3} pt-4 pb-5 mx-auto">
+            {BlogData.map((item) => (
+              <div className="col d-flex justify-content-center" key={item.id}>
+                <BlogDataCard item={item} />
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
 
-        </div>
+
+      <div>
+        <Footer/>
       </div>
     </div>
   );
