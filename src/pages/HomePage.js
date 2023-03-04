@@ -38,7 +38,7 @@ const HomePage = () => {
       </div>
 
       <div className="second-part">
-        <div className="row xs={1} md={2} lg={3} pt-5 pb-5 mx-auto">
+        <div className="row pt-5 pb-5 mx-auto">
           {HomePageData.map((item) => (
             <div className="col d-flex justify-content-center" key={item.id}>
               <HomePageCard item={item} />
@@ -132,7 +132,7 @@ const HomePage = () => {
               </h4>
             </div>
 
-            <div className="row xs={1} md={2} lg={3} pt-4 pb-5 mx-auto">
+            <div className="row pt-4 pb-5 mx-auto">
               {HomePageSeconCardData.map((item) => (
                 <div
                   className="col d-flex justify-content-center"
@@ -157,7 +157,7 @@ const HomePage = () => {
           </h4>
         </div>
 
-        <div className="row xs={1} md={2} lg={4} pt-4 pb-5 mx-auto">
+        <div className="row pt-4 pb-5 mx-auto">
           {CountryData.map((item) => (
             <div className="col d-flex justify-content-center" key={item.id}>
               <CountryDataCard item={item} />
