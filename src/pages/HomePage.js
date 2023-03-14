@@ -77,7 +77,7 @@ const HomePage = () => {
                 <li className="accurate">
                   <div className="d-flex flex-row">
                     <div>
-                      <img src="./images/homepageimages/guidance.png" alt=""/>
+                      <img src="/images/homepageimages/guidance.png" alt=""/>
                     </div>
                     <div className="px-5">
                       <h5>Accurate Guidance</h5>

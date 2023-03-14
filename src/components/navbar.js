@@ -57,6 +57,11 @@ const Navbar = () => {
               Login/Signup
             </a>
           </li>
+          <li className="nav-item px-3">
+            <a href="/ContactUs" className="nav-link" style={{color:"black"}}>
+              Contact Us
+            </a>
+          </li>
 
           {showInput ? (
             <li className="nav-item search px-3 pt-2">
