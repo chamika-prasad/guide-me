@@ -14,7 +14,7 @@ const Navbar = () => {
     setShowInput(true);
   };
   return (
-    <nav className="navbar navbar-light nav navbar-expand-sm">
+    <nav className="navbar navbar-light nav navbar-expand-lg">
       <img
         className="logo mx-2"
         id="logo"
@@ -43,7 +43,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item px-3">
-            <a href="#" className="nav-link" style={{color:"black"}}>
+            <a href="/ConsultantProfile" className="nav-link" style={{color:"black"}}>
               Jobs
             </a>
           </li>
