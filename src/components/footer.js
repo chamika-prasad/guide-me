@@ -133,7 +133,7 @@ const Footer = () => {
         <div className="row align-items-center">
           <div className="">
             <p className="text-center">
-              &copy;Copyright 2023 DuideME. All rights reserved.
+              &copy;Copyright 2023 GuideME. All rights reserved.
             </p>
           </div>
         </div>

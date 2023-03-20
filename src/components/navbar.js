@@ -38,12 +38,12 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item px-3">
-            <a href="#" className="nav-link" style={{color:"black"}}>
+            <a href="/ConsultantProfile" className="nav-link" style={{color:"black"}}>
               Consultants
             </a>
           </li>
           <li className="nav-item px-3">
-            <a href="/ConsultantProfile" className="nav-link" style={{color:"black"}}>
+            <a href="/CustomerProfile" className="nav-link" style={{color:"black"}}>
               Jobs
             </a>
           </li>
