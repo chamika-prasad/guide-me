@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./profilecard.css";
 import * as RiIcons from "react-icons/ri";
 import ExperienceContent from "./experiencecontent";
@@ -12,8 +15,31 @@ const ProfileCard = (props) => {
   const [showTitle, setShowTitle] = useState("Show All");
   const [showEducationTitle, setShowEducationTitle] = useState("Show All");
   const [educationShowAll, setEducationShowAll] = useState(false);
+  const [profileImage, setProfileImage] = useState(
+    "/images/profileimages/initial_profile.png"
+  );
+  const [coverImage, setCoverImage] = useState(
+    "/images/profileimages/initial_cover_image.PNG"
+  );
+  const [cookies, setCookie] = useCookies(["userId"]);
+  // const [firstName, setFirstName] = useState("firstname");
+  // const [lastName, setLastName] = useState("lastname");
+  const navigate = useNavigate();
+
+  const handleEditProfile = (event) => {
+    event.preventDefault();
+    navigate(`/UpdateUserDetails`);
+  };
 
   useEffect(() => {
+    // if (props.personalDetails.firstName) {
+    //   setFirstName(props.personalDetails.firstName);
+    // }
+
+    // if (props.personalDetails.lastName) {
+    //   setLastName(props.personalDetails.lastName);
+    // }
+
     showAll ? setShowTitle("Show Less") : setShowTitle("Show All");
     educationShowAll
       ? setShowEducationTitle("Show Less")
@@ -22,11 +48,7 @@ const ProfileCard = (props) => {
   return (
     <div className="container">
       <div className="card w-100 mb-4 pb-2 shadow-lg border border-3 border-dark ">
-        <img
-          class="card-img-top"
-          src={props.PersonalData[0].cover_image}
-          alt="Card image cap"
-        />
+        <img class="card-img-top" src={props.coverImage} alt="Card image cap" />
         <div className="row position-absolute">
           <div className="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-xs-12 pt-3">
             <img
@@ -51,19 +73,34 @@ const ProfileCard = (props) => {
         </div>
         <div className="row secondrow">
           <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12">
-            <img
-              className="profile"
-              src={props.PersonalData[0].profile_image}
-            />
+            <img className="profile" src={props.profileImage} />
           </div>
 
           <div className="col-xl-3 col-lg-3 col-md-3 col-sm-5 col-xs-12 mx-4">
             <div className="consultent_details pt-3">
-              <h2 className="card-title">{props.PersonalData[0].name}</h2>
-              <h5 className="font-weight-normal">
-                {props.PersonalData[0].position}
-              </h5>
+              {props.personalDetails.firstName ? (
+                <>
+                  <h2 className="card-title">
+                    {props.personalDetails.firstName}&nbsp;
+                    {props.personalDetails.lastName}
+                  </h2>
+                </>
+              ) : (
+                <>
+                  <h2 className="card-title">First Name&nbsp;Last Name</h2>
+                </>
+              )}
+
+              <h5 className="font-weight-normal">{props.title}</h5>
               <h5>{props.PersonalData[0].company}</h5>
+            </div>
+          </div>
+
+          <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-12 align-self-end d-flex justify-content-center mx-2 editprofile">
+            <div className="float-xl-end float-lg-end">
+              <button className="btn rounded-5 " onClick={handleEditProfile}>
+                Edit Profile
+              </button>
             </div>
           </div>
         </div>
@@ -98,7 +135,7 @@ const ProfileCard = (props) => {
             {props.isConsultent ? (
               <>
                 <div className="col-xl-3 col-lg-2 col-md-3 col-sm-12 col-xs-12 pt-2">
-                  <div className="float-xl-end float-xl-end float-lg-end float-md-end float-sm-start float-xs-start price">
+                  <div className="float-xl-end float-lg-end float-md-end float-sm-start float-xs-start price">
                     <button className="btn rounded-5 mx-3 ">$10.5</button>
                   </div>
                 </div>
